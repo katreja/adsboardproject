@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Welcome to Papan Iklan
+{% endblock title %}
+
+{% block content %}
+    <div class="row">
+        <div class="col text-center">
+            <h2>Papan Iklan</h2>
+        </div>
+    </div>    
+    <div class="row mt-4">
+        
+        {% if objects %}
+                {% for iklan in objects  %}
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5><a href="{% url 'iklan-detail' iklan.id %}">{{iklan.judul}}</a></h5>
+                                <p>{{iklan.deskripsi}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+        {% else %}
+                    <div class="col-12">
+                        <p>Belum ada iklan</p>
+                    </div>
+        {% endif %}
+    </div>
+{% endblock content %}
+    

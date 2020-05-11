@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Add Iklan
+{% endblock title %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="col text-center">
+            <h2>Masukan Iklan Baru</h2>
+        </div>
+    </div> 
+    <div class="row mt-4">
+        <div class="col-lg-4 offset-lg-4">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-primary" type="submit">Tambahkan</button>
+                <button class="btn btn-secondary" type="reset">Batalkan</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+    

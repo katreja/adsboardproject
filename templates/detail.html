@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Detail Iklan
+{% endblock title %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col text-center">
+        <h2>Papan Iklan</h2>
+    </div>
+</div>    
+    <div class="row mt-4">
+        <div class="col-lg-4 offset-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5>{{object.judul}}</h5>
+                    <p>{{object.deskripsi}}</p>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">{{object.nama}}</li>
+                        <li class="list-inline-item">{{object.phone}}</li>
+ 
+                            {% if object.email %}
+                                <li class="list-inline-item">
+                                    {{object.email}}
+                                </li>
+                            {% endif %}
+ 
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+    
